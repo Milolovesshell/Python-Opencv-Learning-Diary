@@ -1,0 +1,20 @@
+Pycharm 安装下载搭建
+下载还是用官网的客户端
+https://blog.csdn.net/ling_mochen/article/details/79314118
+注册码http://idea.lanyus.com/
+
+Anaconda安装
+https://blog.csdn.net/chengyuqiang/article/details/82933038
+一个比较好用的说明
+https://blog.csdn.net/ITLearnHall/article/details/81708148
+
+Anaconda和Pycharm安装的一个小日记
+1.首先要安装Anaconda，因为里面包含了Python本身和一些包，不需要另外再下载python了
+2.选择graphy版本安装，如果是其他的了话就是DOS窗口不太会用。
+3.进入控制面板-系统-高级设置-环境变量-path，在上面个人那里新建：G:\Anaconda3;G:\Anaconda3\Library\mingw-w64\bin;G:\Anaconda3\Library\usr\bin;G:\Anaconda3\Library\bin;G:\Anaconda3\Scripts
+
+4.安装后进入cmd，查看python版本，查看conda list.这时候会出现一些warming，比如环境还未激活之类的。
+5.激活环境 activate base注意，显示“>”表示在外头，显示“>>>”表示已经进入python，如果在python内输入activate base会提示syxtax error语法错误。
+6.输入python，进入python，尝试输入print('hello')试试吧
+7.安装python后要先在右下角-cong-setting，如果乱码了话选择第一个-appearance-字体选择Times New Roman
+8.进入新建python时，选择环境是conda，后面加载如果跳出修改DLL提示可以把360关了
