@@ -1,0 +1,30 @@
+pytorch 安装比较好的教程地址：https://www.cnblogs.com/zhouzhiyao/p/11784055.html
+其中下载出错，利用清华园镜像：https://b23.tv/av78026783
+=====
+1.切换清华大学源
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+2.用conda创建新的环境
+conda create --name 新环境名 python=版本号
+比如conda create --name Pytorch python=3.7
+3.conda activate Pytorch
+4.Pytorch 清华源
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+5.安装Pytorch
+conda install pytorch torchvision cudatoolkit=版本号
+
+
+退出环境
+conda deactivate
+
+*删除环境（不要乱删哦~）
+conda remove -name 环境名
+*删除清华源并切换回原版源
+conda config --remove-key channels
+
+=====
+
+其中：WIN10版本以下是没法在任务管理器中看到GPU驱动的。
+
+查看CUBE型号：https://www.jianshu.com/p/d3b9419a0f89
