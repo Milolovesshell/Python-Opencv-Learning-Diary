@@ -1,7 +1,7 @@
 pytorch 安装比较好的教程地址：https://www.cnblogs.com/zhouzhiyao/p/11784055.html
 其中下载出错，利用清华园镜像：https://b23.tv/av78026783
 =====
-1.切换清华大学源
+1.切换清华大学源（前两个是添加 最后的是切换）
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
 conda config --set show_channel_urls yes
@@ -13,6 +13,7 @@ conda create --name 新环境名 python=版本号
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
 5.安装Pytorch
 conda install pytorch torchvision cudatoolkit=版本号
+比如：conda install pytorch torchvision cudatoolkit=10.1
 
 
 退出环境
