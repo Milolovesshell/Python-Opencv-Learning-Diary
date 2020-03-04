@@ -1,5 +1,10 @@
 pytorch 安装比较好的教程地址：https://www.cnblogs.com/zhouzhiyao/p/11784055.html
-其中下载出错，利用清华园镜像：https://b23.tv/av78026783
+里面出现的问题：
+
+一、WIN10版本以下是没法在任务管理器中看到GPU驱动的。
+查看CUBE型号：https://www.jianshu.com/p/d3b9419a0f89
+
+二、下载出错，利用清华园镜像：https://b23.tv/av78026783
 =====
 1.切换清华大学源（前两个是添加 最后的是切换）
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
@@ -26,6 +31,4 @@ conda config --remove-key channels
 
 =====
 
-其中：WIN10版本以下是没法在任务管理器中看到GPU驱动的。
-
-查看CUBE型号：https://www.jianshu.com/p/d3b9419a0f89
+三、上面教程最后一步没打括号：torch.cuda.is_available()
