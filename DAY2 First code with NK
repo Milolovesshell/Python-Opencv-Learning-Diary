@@ -1,4 +1,45 @@
-从动手学深度学习的网站中下载样例。
+一、从动手学深度学习的网站中下载样例并解压。
+二、导入mxnet
+cd /d F:\d2l-zh-1.0
 conda activate Pytorch
-set MXNET_GLUON_REPO=https://apache-mxnet.s3.cn-north-1.amazonaws.com.cn/ jupyter notebook
+set MXNET_GLUON_REPO=https://apache-mxnet.s3.cn-north-1.amazonaws.com.cn/jupyter notebook
+
+在Pytorch环境中卸载CPU的mxnet
+pip uninstall mxnet
+conda activate base
+
+将样例文件夹中的environment.yml文件用记事本打开，“mxnet”改为“mxnet-cu101”，保存退出
+更新虚拟环境
+conda env update -f environment.yml
+
+执行
+conda activate Pytorch
+python
+from mxnet import nd
+x = nd.arange(12)
+如果还不行了话，quit()退出python，直接安装pip install mxnet-cu101
+
+三、运行
 jupyter notebook
+
+四、如果jupyter中没法import：直接在jupyter里pip uninstall mxnet
+
+（如果还是不行 参考1）https://blog.csdn.net/m0_37723587/article/details/98664914
+在cmd中
+conda activate base
+conda install ipykernel
+conda install -n Pytorch ipykernel
+conda activate Pytorch
+python -m ipykernel insatll --user --name Pytorch --display-name "Pytorch"
+jupyter notebook
+（如果还是不行 参考2）https://blog.csdn.net/zhang_cherry/article/details/103699358
+我把文件里的内容改了个斜线方向F:\Anaconda3\envs\Pytorch\\python.exe
+
+NDArray是⼀个类，也是存储和变换数据的主要⼯具。
+本书常将NDArray实例直接称作NDArray，就想Numpy的实例array=([],[],[])
+
+以后进入步骤：
+cd /d F:\d2l-zh-1.0
+conda activate Pytorch
+jupyter notebook
+from mxnet import nd
