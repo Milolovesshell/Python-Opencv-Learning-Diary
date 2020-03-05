@@ -1,0 +1,4 @@
+从动手学深度学习的网站中下载样例。
+conda activate Pytorch
+set MXNET_GLUON_REPO=https://apache-mxnet.s3.cn-north-1.amazonaws.com.cn/ jupyter notebook
+jupyter notebook
