@@ -54,7 +54,7 @@ nd.array()：将numpy→NDarray
 
 ====自动求梯度====
 举例：对于
-![text](http://latex.codecogs.com/gif.latex?y%3D2x%5E%7BT%7Dx)
+![text](https://github.com/Milomilo0320/Python-Opencv-Learning-Diary/blob/master/picture/1.gif)
 from mxnet import autograd, nd
 
 
