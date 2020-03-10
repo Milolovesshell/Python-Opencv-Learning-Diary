@@ -1,4 +1,5 @@
 关于NDArray的一些代码
+
 ====基础====
 from mxnet import nd
 x = nd.arange(12)  %0~11
@@ -53,8 +54,67 @@ nd.array()：将numpy→NDarray
 .asnumpy()：将NDarray→numpy
 
 ====自动求梯度====
-举例：对于
-![text](https://github.com/Milomilo0320/Python-Opencv-Learning-Diary/blob/master/picture/1.gif)
+举例：对于y=2* (x^T)(x)，求y关于x的梯度
+1.导入包
 from mxnet import autograd, nd
+2.创建向量x
+x = nd.arange(4).reshape((4, 1))
+x
+3.申请储存梯度的内存
+x.attach_grad()
+4.记录梯度
+with autograd.record():
+    y = 2 * nd.dot(x.T, x)
+5.返回梯度
+y.backward()
+6.输出求出来的梯度
+x.grad
+7.检验
+因为y关于x的梯度应该是4x
+assert (x.grad - 4 * x).norm().asscalar() == 0
+assert后面跟一个判断，如果判断是真则继续，如果判断为假则报错
 
+====训练模式和预测模式====
+默认情况下，autograd是预测模式，当调⽤record函数记录并计算梯度时，转为训练模式。
+在有些情况下，同⼀个模型在训练模式和预测模式下的⾏为并不相同。
+autograd.is_training()判断是否为训练模式
 
+====对python控制流求梯度====
+Python的控制流（如条件和循环控制）也有可能对变量求梯度。
+举例：对于c=f(a)，求c关于a的梯度(f是自定义的一个函数)
+0.定义函数f
+def f(a):
+    b = a * 2
+    while b.norm().asscalar() < 1000:
+        b = b * 2
+    if b.sum().asscalar() > 0:
+        c = b
+    else:
+        c = 100 * b
+    return c
+1.导入包
+from mxnet import autograd, nd
+2.创建向量a
+a = nd.random.normal(shape=1)
+a
+3.申请储存梯度的内存
+a.attach_grad()
+4.记录梯度
+with autograd.record():
+    c = f(a)
+5.返回梯度
+c.backward()
+6.输出求出来的梯度
+a.grad
+7.检验
+因为y关于x的梯度应该是4x
+assert (x.grad - 4 * x).norm().asscalar() == 0
+assert后面跟一个判断，如果判断是真则继续，如果判断为假则报错
+
+====查阅函数====
+1.查找模块⾥的所有函数和类：
+print(dir(nd.random))
+忽略以_ _ 和_开头结尾的
+2.查找某个具体函数用法
+help(nd.ones_like)
+3.官网 http://mxnet.apache.org/
