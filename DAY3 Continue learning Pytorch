@@ -54,7 +54,7 @@ nd.array()：将numpy→NDarray
 
 ====自动求梯度====
 举例：对于
-![](http://latex.codecogs.com/gif.latex?\\sigma=\sqrt{\frac{1}{n}{\sum_{k=1}^n(x_i-\bar{x})^2}})
+![text](http://latex.codecogs.com/gif.latex?y%3D2x%5E%7BT%7Dx)
 from mxnet import autograd, nd
 
 
