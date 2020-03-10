@@ -40,6 +40,6 @@ NDArray是⼀个类，也是存储和变换数据的主要⼯具。
 
 以后进入步骤：
 cd /d F:\d2l-zh-1.0
-conda activate Pytorch
+%conda activate Pytorch
 jupyter notebook
-from mxnet import nd
+%from mxnet import nd
