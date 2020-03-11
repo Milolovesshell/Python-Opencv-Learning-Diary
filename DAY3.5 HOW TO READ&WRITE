@@ -1,0 +1,14 @@
+import json
+import pandas as pd
+import glob
+import os
+import fileinput
+
+for filename in os.listdir("E:/nk/"):  #从hotel目录中读取每个json文件名，存为filename
+    with open("E:/nk/" + filename,encoding='utf-8') as fp:  #读取文件
+        d = json.load(fp)
+        fp.close()
+    with open('output.csv',"a") as fk:
+        for k in d:
+            fk.write('%s,%s\n' % (k, d[k]))
+        fk.write('\n')
